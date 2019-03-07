@@ -1,0 +1,7 @@
+[package]
+name = "tennis"
+version = "0.1.0"
+authors = ["Matthew Walton <matthew@mathw.me.uk>"]
+edition = "2018"
+
+[dependencies]
