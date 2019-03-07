@@ -1,4 +1,8 @@
+#[cfg(test)]
 use crate::implementation::tennis1;
+#[cfg(test)]
+use crate::implementation::tennis2;
+#[cfg(test)]
 use crate::tennis::Tennis;
 
 mod implementation;
@@ -111,6 +115,20 @@ fn test_tennis1() {
     for (p1, p2, result) in specific_scores() {
         test_specific_score(
             &mut tennis1::TennisGame::new("player1", "player2"),
+            p1,
+            p2,
+            result,
+        );
+    }
+}
+
+#[test]
+fn test_tennis2() {
+    let mut tennis2 = tennis2::TennisGame::new("player1", "player2");
+    test_realistic_tennis_game(&mut tennis2);
+    for (p1, p2, result) in specific_scores() {
+        test_specific_score(
+            &mut tennis2::TennisGame::new("player1", "player2"),
             p1,
             p2,
             result,
